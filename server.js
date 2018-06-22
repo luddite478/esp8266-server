@@ -12,10 +12,12 @@ app.get('/', (req, res) => {
 
 app.get('/pressed', (req, res) => {
   socket.emit('buttonState', 'pressed')
+  res.send('ok')
 })
 
 app.get('/released', (req, res) => {
   socket.emit('buttonState', 'released')
+  res.send('ok')
 })
 
 io.on('connection', (sock) => {
@@ -30,4 +32,4 @@ io.on('connection', (sock) => {
 
 })
 
-http.listen(PORT, () => console.log('port 3000'))
+http.listen(PORT, () => console.log('port 5000'))
