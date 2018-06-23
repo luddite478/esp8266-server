@@ -12,12 +12,12 @@ app.get('/', (req, res) => {
 
 app.get('/pressed', (req, res) => {
   socket.emit('buttonState', 'pressed')
-  res.send('SUCCESS')
+  res.send('Button is pressed')
 })
 
 app.get('/released', (req, res) => {
   socket.emit('buttonState', 'released')
-  res.send('SUCCESS')
+  res.send('Button is released')
 })
 
 io.on('connection', (sock) => {
