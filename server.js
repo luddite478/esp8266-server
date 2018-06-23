@@ -11,12 +11,12 @@ app.get('/', (req, res) => {
 })
 
 app.get('/pressed', (req, res) => {
-  socket.broadcast.emit('buttonState', 'pressed')
+  io.sockets.emit('buttonState', 'pressed')
   res.send('Button is pressed')
 })
 
 app.get('/released', (req, res) => {
-  socket.broadcast.emit('buttonState', 'released')
+  io.sockets.emit('buttonState', 'released')
   res.send('Button is released')
 })
 
